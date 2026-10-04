@@ -11,9 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BarbersRouteImport } from './routes/barbers'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EditionsRouteImport } from './routes/editions'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
 import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 
@@ -25,6 +27,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BarbersRoute = BarbersRouteImport.update({
+  id: '/barbers',
+  path: '/barbers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookRoute = BookRouteImport.update({
@@ -42,6 +49,11 @@ const EditionsRoute = EditionsRouteImport.update({
   path: '/editions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkIndexRoute = WorkIndexRouteImport.update({
   id: '/work/',
   path: '/work/',
@@ -56,18 +68,22 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/barbers': typeof BarbersRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/editions': typeof EditionsRoute
+  '/services': typeof ServicesRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work/': typeof WorkIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/barbers': typeof BarbersRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/editions': typeof EditionsRoute
+  '/services': typeof ServicesRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work': typeof WorkIndexRoute
 }
@@ -75,9 +91,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/barbers': typeof BarbersRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/editions': typeof EditionsRoute
+  '/services': typeof ServicesRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work/': typeof WorkIndexRoute
 }
@@ -86,27 +104,33 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/barbers'
     | '/book'
     | '/contact'
     | '/editions'
+    | '/services'
     | '/work/$slug'
     | '/work/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/barbers'
     | '/book'
     | '/contact'
     | '/editions'
+    | '/services'
     | '/work/$slug'
     | '/work'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/barbers'
     | '/book'
     | '/contact'
     | '/editions'
+    | '/services'
     | '/work/$slug'
     | '/work/'
   fileRoutesById: FileRoutesById
@@ -114,9 +138,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BarbersRoute: typeof BarbersRoute
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   EditionsRoute: typeof EditionsRoute
+  ServicesRoute: typeof ServicesRoute
   WorkSlugRoute: typeof WorkSlugRoute
   WorkIndexRoute: typeof WorkIndexRoute
 }
@@ -135,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/barbers': {
+      id: '/barbers'
+      path: '/barbers'
+      fullPath: '/barbers'
+      preLoaderRoute: typeof BarbersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book': {
@@ -158,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work/': {
       id: '/work/'
       path: '/work'
@@ -178,9 +218,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BarbersRoute: BarbersRoute,
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   EditionsRoute: EditionsRoute,
+  ServicesRoute: ServicesRoute,
   WorkSlugRoute: WorkSlugRoute,
   WorkIndexRoute: WorkIndexRoute,
 }

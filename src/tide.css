@@ -4,7 +4,7 @@
   --matte: #2a2826;
   --paper: #e7e1d6;
   --mist: #a39b90;
-  --gold: #c6a15a;
+  --gold: #f0c84a;
   --violet: #6d5c8f;
   min-height: 100svh;
   background: var(--ink);
@@ -81,9 +81,11 @@
 }
 
 .rt-book.solid {
-  background: linear-gradient(110deg, #8c6a32 0%, #f6e7c2 42%, #c6a15a 70%, #8c6a32 100%);
-  color: #16130e;
+  background: linear-gradient(180deg, #fff6c4 0%, #f0c84a 38%, #c89216 72%, #8a6410 100%);
+  color: #1a1408;
   border-color: transparent;
+  font-weight: 500;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
 .rt-book.big {
@@ -155,17 +157,28 @@
 
 .rt-hero h1 {
   margin: 0;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
-  font-weight: 500;
-  font-size: clamp(4.2rem, 12vw, 8.4rem);
-  line-height: 0.82;
-  letter-spacing: 0.04em;
-  background: linear-gradient(110deg, #6e5428 0%, #f6e7c2 28%, #c6a15a 48%, #f3e6c8 62%, #8a6830 100%);
-  background-size: 180% 100%;
+  font-family: "Anton", "Arial Black", sans-serif;
+  font-weight: 400;
+  font-size: clamp(4.8rem, 16vw, 10.5rem);
+  line-height: 0.84;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    180deg,
+    #fffceb 0%,
+    #ffe56a 16%,
+    #f6c431 34%,
+    #fff6c0 48%,
+    #e2aa16 64%,
+    #8d6410 82%,
+    #f8d56a 100%
+  );
+  background-size: 100% 220%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: rt-melt 14s ease-in-out infinite;
+  filter: drop-shadow(0 2px 0 #5a4008) drop-shadow(0 14px 18px rgba(0, 0, 0, 0.55));
+  animation: rt-polish 9s ease-in-out infinite;
 }
 
 .rt-hero h1 span {
@@ -175,9 +188,14 @@
   margin-top: 0.35rem;
 }
 
-@keyframes rt-melt {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+@keyframes rt-polish {
+  0%,
+  100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
 }
 
 .rt-lead {
@@ -199,11 +217,14 @@
 }
 
 .rt-section h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  letter-spacing: 0.03em;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
   margin: 0 0 1.2rem;
+  color: #f3e6c4;
+}
+
+.rt-book-page h1 {
+  margin: 0 0 1.4rem;
+  font-size: clamp(3.2rem, 8vw, 5.8rem);
   color: #f3e6c4;
 }
 
@@ -250,9 +271,18 @@
 }
 
 .rt-price {
-  font-family: "Cormorant Garamond", serif;
-  color: #e7d3a4;
-  font-size: 1.6rem;
+  font-family: "Anton", "Arial Black", sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.02em;
+  background-image: linear-gradient(180deg, #fff8d0 0%, #f6c431 46%, #a87410 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+  background-image: linear-gradient(180deg, #fff8d0 0%, #f6c431 46%, #a87410 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .rt-film {
@@ -294,15 +324,23 @@
   padding: 0.9rem 0.2rem 0;
 }
 
-.rt-team strong {
-  display: block;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.6rem;
-  font-weight: 500;
+.rt-team figcaption p {
+  margin: 0.7rem 0 0;
+  color: var(--mist);
+  max-width: 36rem;
 }
 
-.rt-team span {
-  color: var(--mist);
+.rt-team strong {
+  display: block;
+  font-family: "Anton", "Arial Black", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-image: linear-gradient(180deg, #fff8d0 0%, #f6c431 46%, #a87410 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .rt-book-page {
@@ -310,12 +348,16 @@
   padding: 7rem 6vw 4rem;
 }
 
-.rt-book-page h1 {
-  margin: 0 0 1.4rem;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  color: #f3e6c4;
+.rt-book-page h1,
+.rt-section h2 {
+  font-family: "Anton", "Arial Black", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background-image: linear-gradient(180deg, #fff8d0 0%, #f6c431 42%, #a87410 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .rt-square,
@@ -352,8 +394,13 @@
 }
 
 @media (max-width: 720px) {
+  .rt-nav {
+    flex-wrap: wrap;
+  }
   .rt-nav nav {
-    display: none;
+    order: 3;
+    width: 100%;
+    gap: 1rem;
   }
 }
 

@@ -20,7 +20,7 @@ export function SiteHeader() {
         Skip to content
       </a>
       <Link to="/" className="wordmark" onClick={() => setOpen(false)}>
-        Jacob Moore Artist
+        Rising Tide
       </Link>
       <div className="header-end">
         <a className="ig-link" href={INSTAGRAM_URL} target="_blank" rel="noreferrer">

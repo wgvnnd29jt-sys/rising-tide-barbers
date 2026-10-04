@@ -5,7 +5,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <p>
-        Jacob Moore Artist
+        Rising Tide
         <br />
         Metalwork. Pacific Northwest.
       </p>
@@ -18,7 +18,7 @@ export function SiteFooter() {
         </a>
         <Link to="/contact">Contact</Link>
       </nav>
-      <p>© {new Date().getFullYear()} Jacob Moore Artist</p>
+      <p>© {new Date().getFullYear()} Rising Tide Barbers</p>
     </footer>
   );
 }
