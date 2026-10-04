@@ -8,13 +8,12 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jacob Moore Artist" },
+      { title: "Rising Tide Barbers" },
       {
         name: "description",
-        content:
-          "Jacob Moore Artist. Metalwork from the Pacific Northwest. Forged metal, steel wire, and welded rod.",
+        content: "Rising Tide Barbers in Parksville. Book a chair.",
       },
-      { name: "theme-color", content: "#efeeeb" },
+      { name: "theme-color", content: "#121110" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
